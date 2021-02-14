@@ -1,0 +1,20 @@
+{% comment %} <h1>items is a python dictionary method to return key/value pair. </h1>
+{% for field, value in profile.items %} 
+    <p>{{ field }} = {{ value }}</p>
+{% endfor %}
+
+{% if request.user.profile.referenceID == '1' %}
+    <h1>{{request.user.username}}</h1>
+{% endif %} {% endcomment %}
+
+{% for profiles in profile %}
+    <p class="">Name: {{ profiles.user.username }}</p>
+    <p class="">ID: {{ profiles.user.profile.id }}</p>
+    <p class="">Phone: {{ profiles.user.profile.phone }}</p>
+    <p class="">Link: {{ profiles.user.profile.link }}</p>
+    <p class="">Bio: {{ profiles.user.profile.bio }}</p>
+    <p class="">Money: {{ profiles.user.profile.money }}</p>
+    <p class="">Reference: {{ profiles.user.profile.referenceID }}</p>
+    <br>
+    <p>============================</p>
+{% endfor %}
